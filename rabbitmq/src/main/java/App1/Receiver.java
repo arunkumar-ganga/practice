@@ -1,13 +1,9 @@
-/**
+package App1; /**
  * Created by arun.kumarg on 31/03/17.
  */
-import com.rabbitmq.client.AMQP;
-import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Consumer;
-import com.rabbitmq.client.DefaultConsumer;
-import com.rabbitmq.client.Envelope;
+
+import com.rabbitmq.client.*;
+import connection.RMQConnection;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
@@ -16,14 +12,10 @@ public class Receiver {
 
   private final static String QUEUE_NAME = "Test";
 
-  public static void main(String[] argv) throws java.io.IOException,
+  public  void run() throws java.io.IOException,
              java.lang.InterruptedException, TimeoutException {
 
-    ConnectionFactory factory = new ConnectionFactory();
-    factory.setHost("192.168.0.105");
-    factory.setUsername("test");
-    factory.setPassword("test");
-    Connection connection = factory.newConnection();
+    Connection connection = RMQConnection.getInstance();
     Channel channel = connection.createChannel();
 
     channel.queueDeclare(QUEUE_NAME, false, false, false, null);
