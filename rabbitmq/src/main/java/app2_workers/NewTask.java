@@ -1,4 +1,4 @@
-package App2;
+package app2_workers;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

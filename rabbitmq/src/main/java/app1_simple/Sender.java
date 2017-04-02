@@ -1,4 +1,4 @@
-package App1; /**
+package app1_simple; /**
  * Created by arun.kumarg on 31/03/17.
  */
 

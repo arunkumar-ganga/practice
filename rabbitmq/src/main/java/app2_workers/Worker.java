@@ -1,4 +1,4 @@
-package App2;
+package app2_workers;
 
 import com.rabbitmq.client.*;
 import connection.RMQConnection;
@@ -33,7 +33,6 @@ public class Worker {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
             }
         };
 
